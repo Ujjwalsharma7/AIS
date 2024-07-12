@@ -1,7 +1,15 @@
 import { Button } from "@mui/material";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
+import { useCallback } from "react";
 
 const OpportunitiesScroll = ({ className = "" }) => {
+  const navigate = useNavigate();
+
+  const goToForm = useCallback(() => {
+    navigate("/form");
+  }, [navigate]);
+
   return (
     <div
       className={`self-stretch rounded-11xl box-border flex flex-row items-start justify-start pt-0 px-4 pb-[3px] gap-[18.4px] max-w-full text-left text-30xl text-black font-harmattan border-[0.3px] border-solid border-black lg:flex-wrap ${className}`}
@@ -47,6 +55,7 @@ const OpportunitiesScroll = ({ className = "" }) => {
                 "&:hover": { background: "rgba(164, 29, 35, 0.76)" },
                 height: 59,
               }}
+              onClick={goToForm}
             >
               Submit
             </Button>

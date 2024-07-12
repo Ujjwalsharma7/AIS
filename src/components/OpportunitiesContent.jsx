@@ -98,61 +98,24 @@ const OpportunitiesContent = ({ className = "" }) => {
             </h2>
           </div>
           <div className="self-stretch h-[321px] overflow-y-auto shrink-0 flex flex-col items-start justify-start pt-0 px-0 pb-[47px] box-border gap-[5px] max-w-full text-steelblue mq825:pb-[31px] mq825:box-border">
-            <Button
-              className="self-stretch h-[88px] shrink-0 mq450:pl-5 mq450:pr-5 mq450:box-border"
-              disableElevation
-              variant="contained"
-              sx={{
-                textTransform: "none",
-                color: "#00598b",
-                fontSize: "37",
-                background: "#f4f4f4",
-                borderColor: "#000",
-                borderWidth: "0.3px 0px 0.3px 0px",
-                borderStyle: "solid",
-                borderRadius: "40px",
-                "&:hover": { background: "#f4f4f4" },
-                height: 88,
-              }}
-            >
-              recognition And rankings
-            </Button>
-            <Button
-              className="self-stretch h-[88px] shrink-0 mq450:pl-5 mq450:pr-5 mq450:box-border"
-              disableElevation
-              variant="contained"
-              sx={{
-                textTransform: "none",
-                color: "#00598b",
-                fontSize: "37",
-                background: "#f4f4f4",
-                borderColor: "#000",
-                borderWidth: "0.3px 0px 0.3px 0px",
-                borderStyle: "solid",
-                borderRadius: "40px",
-                "&:hover": { background: "#f4f4f4" },
-                height: 88,
-              }}
-            >{`vision & mission`}</Button>
-            <Button
-              className="self-stretch h-[88px] shrink-0 mq450:pl-5 mq450:pr-5 mq450:box-border"
-              disableElevation
-              variant="contained"
-              sx={{
-                textTransform: "none",
-                color: "#00598b",
-                fontSize: "37",
-                background: "#f4f4f4",
-                borderColor: "#000",
-                borderWidth: "0.3px 0px 0.3px 0px",
-                borderStyle: "solid",
-                borderRadius: "40px",
-                "&:hover": { background: "#f4f4f4" },
-                height: 88,
-              }}
-            >
-              ONGC group of companies
-            </Button>
+            <div className="self-stretch rounded-21xl bg-whitesmoke box-border flex flex-row items-start justify-center py-[17px] px-5 shrink-0 max-w-full border-t-[0.3px] border-solid border-black border-b-[0.3px]">
+              <div className="h-[88px] w-[556px] relative rounded-21xl bg-whitesmoke box-border hidden max-w-full border-t-[0.3px] border-solid border-black border-b-[0.3px]" />
+              <h2 className="m-0 relative text-inherit [text-decoration:underline] leading-[140.97%] capitalize font-bold font-inherit z-[1] mq825:text-11xl mq825:leading-[42px] mq450:text-3xl mq450:leading-[31px]">
+                Recognition and Rankings
+              </h2>
+            </div>
+            <div className="self-stretch rounded-21xl bg-whitesmoke box-border flex flex-row items-start justify-center py-[17px] px-5 shrink-0 max-w-full border-t-[0.3px] border-solid border-black border-b-[0.3px]">
+              <div className="h-[88px] w-[556px] relative rounded-21xl bg-whitesmoke box-border hidden max-w-full border-t-[0.3px] border-solid border-black border-b-[0.3px]" />
+              <h2 className="m-0 relative text-inherit [text-decoration:underline] leading-[140.97%] capitalize font-bold font-inherit z-[1] mq825:text-11xl mq825:leading-[42px] mq450:text-3xl mq450:leading-[31px]">
+                Vision and Mission
+              </h2>
+            </div>
+            <div className="self-stretch rounded-21xl bg-whitesmoke box-border flex flex-row items-start justify-center py-[17px] px-5 shrink-0 max-w-full border-t-[0.3px] border-solid border-black border-b-[0.3px]">
+              <div className="h-[88px] w-[556px] relative rounded-21xl bg-whitesmoke box-border hidden max-w-full border-t-[0.3px] border-solid border-black border-b-[0.3px]" />
+              <h2 className="m-0 relative text-inherit [text-decoration:underline] leading-[140.97%] capitalize font-bold font-inherit z-[1] mq825:text-11xl mq825:leading-[42px] mq450:text-3xl mq450:leading-[31px]">
+                ONGC group of Companies
+              </h2>
+            </div>
             <div className="self-stretch rounded-21xl bg-whitesmoke box-border flex flex-row items-start justify-center py-[17px] px-5 shrink-0 max-w-full border-t-[0.3px] border-solid border-black border-b-[0.3px]">
               <div className="h-[88px] w-[556px] relative rounded-21xl bg-whitesmoke box-border hidden max-w-full border-t-[0.3px] border-solid border-black border-b-[0.3px]" />
               <h2 className="m-0 relative text-inherit [text-decoration:underline] leading-[140.97%] capitalize font-bold font-inherit z-[1] mq825:text-11xl mq825:leading-[42px] mq450:text-3xl mq450:leading-[31px]">

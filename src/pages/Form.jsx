@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import TopBar from "../components/TopBar";
-import { db } from "../firebase/fire";
+import { resdb, db } from "../firebase/fire";
 import { doc, collection, addDoc } from "firebase/firestore";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
+import { useCallback } from "react";
 
 const Form = () => {
   const [name, setName] = useState();
@@ -15,8 +16,22 @@ const Form = () => {
   const [branch, setBranch] = useState();
   const [year, setYear] = useState();
   const [coverLetter, setCoverLetter] = useState();
+  // const [data, setData] = useState([]);
+
+  const navigate = useNavigate();
 
   const dbref = collection(db, "applications");
+
+  // const handleUpload = (e) => {
+  //   console.log(e.target.files[0]);
+  //   const res = ref(resdb, `Imgs/${v4()}`);
+  //   uploadBytes(res, e.target.files[0]).then((data) => {
+  //     console.log(data, "res");
+  //     getDownloadURL(data.ref).then((val) => {
+  //       setResume(val);
+  //     });
+  //   });
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,10 +54,26 @@ const Form = () => {
     }
   };
 
+  const onHomeTextClick = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+  const onAboutTextClick = useCallback(() => {
+    navigate("/about");
+  }, [navigate]);
+  const onOpportunitiesTextClick = useCallback(() => {
+    navigate("/opportunities");
+  }, [navigate]);
+
   return (
     <div>
       <div className="flex flex-col overflow-auto">
-        <TopBar />
+        <TopBar
+          frameDivFlex="unset"
+          frameDivAlignSelf="stretch"
+          onHomeTextClick={onHomeTextClick}
+          onOpportunitiesTextClick={onOpportunitiesTextClick}
+          onAboutTextClick={onAboutTextClick}
+        />
         <form onSubmit={handleSubmit}>
           <div className="flex justify-center">
             <h1 className=" text-12xl text-brown-100">
@@ -121,29 +152,20 @@ const Form = () => {
                 />
               </div>
               <div className=" mx-20 my-5 flex flex-col">
-                <label
-                  className="block mb-2 text-7xl font-medium text-black"
-                  htmlFor="file_input"
-                >
-                  Upload Resume
+                <label htmlFor="name" className=" text-7xl ">
+                  Upload Resume Link
                 </label>
                 <input
-                  className="block w-full text-3xl text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                  type="text"
                   required
-                  aria-describedby="file_input_help"
                   id="resume"
-                  type="file"
+                  placeholder="Resume Link"
+                  className="border-2 border-brown-100 text-7xl"
                   value={resume}
                   onChange={(e) => {
                     setResume(e.target.value);
                   }}
                 />
-                <p
-                  className="mt-1 text-sm text-gray-500 dark:text-gray-300"
-                  id="file_input_help"
-                >
-                  PDF (MAX. 5Mb).
-                </p>
               </div>
             </div>
             <div className="flex flex-col justify-center w-1/2">
@@ -215,29 +237,20 @@ const Form = () => {
                 />
               </div>
               <div className=" mx-20 my-5 flex flex-col">
-                <label
-                  className="block mb-2 text-7xl font-medium text-black"
-                  htmlFor="file_input"
-                >
-                  Upload Cover Letter
+                <label htmlFor="name" className=" text-7xl ">
+                  Upload Cover Letter Link
                 </label>
                 <input
-                  className="block w-full text-3xl text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                  aria-describedby="file_input_help"
-                  id="resume"
+                  type="text"
                   required
-                  type="file"
+                  id="resume"
+                  placeholder="Cover letter Link"
+                  className="border-2 border-brown-100 text-7xl"
                   value={coverLetter}
                   onChange={(e) => {
                     setCoverLetter(e.target.value);
                   }}
                 />
-                <p
-                  className="mt-1 text-sm text-gray-500 dark:text-gray-300"
-                  id="file_input_help"
-                >
-                  PDF (MAX. 5Mb).
-                </p>
               </div>
             </div>
           </div>
